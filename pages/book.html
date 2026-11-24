@@ -1,0 +1,159 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookNest - Books</title>
+    <link rel="stylesheet" href="../CSS/common.css">
+    <script src="../Js/common.js"></script>
+</head>
+<body>
+
+<div id="navbar"></div>
+
+<main class="container">
+
+    <div class="page-heading">
+        <h1>📚 Book Management</h1>
+        <p>Manage your library books easily.</p>
+    </div>
+
+    <!-- Add Book Form -->
+
+    <section class="form-section">
+
+        <h2 id="formTitle">➕ Add New Book</h2>
+
+        <form id="bookForm" onsubmit="addBook(event)">
+
+            <div class="form-grid">
+
+                <div class="input-group">
+                    <label>Book ID</label>
+                    <input type="text" id="bookId"
+                           placeholder="Enter Book ID" required>
+                </div>
+
+                <div class="input-group">
+                    <label>Book Name</label>
+                    <input type="text" id="bookName"
+                           placeholder="Enter Book Name" required>
+                </div>
+
+                <div class="input-group">
+                    <label>Author</label>
+                    <input type="text" id="author"
+                           placeholder="Enter Author Name" required>
+                </div>
+
+                <div class="input-group">
+                    <label>Category</label>
+                    <select id="category" required>
+                        <option value="">Select Category</option>
+                        <option>Fiction</option>
+                        <option>Non-Fiction</option>
+                        <option>Science</option>
+                        <option>Technology</option>
+                        <option>History</option>
+                        <option>Biography</option>
+                        <option>Education</option>
+                        <option>Novel</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label>Publisher</label>
+                    <input type="text" id="publisher"
+                           placeholder="Enter Publisher" required>
+                </div>
+
+                <div class="input-group">
+                    <label>Year</label>
+                    <input type="number" id="year"
+                           placeholder="Enter Year" min="1" required>
+                </div>
+
+                <div class="input-group">
+                    <label>Quantity</label>
+                    <input type="number" id="quantity"
+                           placeholder="Enter Quantity" min="1" required>
+                </div>
+
+            </div>
+
+            <div class="form-buttons">
+                <button type="submit" id="submitBtn" class="add-btn">
+                    Add Book
+                </button>
+
+                <button type="button" class="reset-btn" onclick="cancelEdit()">
+                    Clear
+                </button>
+            </div>
+
+        </form>
+
+    </section>
+
+
+    <!-- Book History -->
+
+    <section class="history-section">
+
+        <div class="history-heading">
+            <div>
+                <h2>📖 Book History</h2>
+                <p>All books available in your library</p>
+            </div>
+
+            <div class="book-count">
+                Total Books: <span id="bookCount">0</span>
+            </div>
+        </div>
+
+        <!-- Search -->
+
+        <div class="search-box">
+            <input type="text" id="searchInput"
+                   placeholder="Search Book Name, Author or Category..."
+                   oninput="searchBooks()">
+        </div>
+
+        <!-- Table -->
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Book ID</th>
+                        <th>Book Name</th>
+                        <th>Author</th>
+                        <th>Category</th>
+                        <th>Quantity</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+
+                <tbody id="bookTableBody"></tbody>
+            </table>
+        </div>
+
+        <p id="emptyMessage"></p>
+
+    </section>
+
+    <a href="dashboard.html" class="back-btn">
+        ← Back to Dashboard
+    </a>
+
+</main>
+
+<footer>
+    <p>© 2026 BookNest Library Management System</p>
+</footer>
+
+<script src="../Js/book.js"></script>
+
+</body>
+</html>

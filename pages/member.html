@@ -1,0 +1,131 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookNest - Members</title>
+    <link rel="stylesheet" href="../CSS/common.css">
+    <footer>
+        <p>© 2026 BookNest Library Management System</p>
+    </footer>
+
+    <script src="../Js/common.js"></script>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div id="navbar"></div>
+
+    <!-- Main Content -->
+    <main class="container">
+
+        <section class="page-heading">
+            <h1>👥 Member Management</h1>
+            <p>Manage your library members easily.</p>
+        </section>
+
+        <!-- Member Form -->
+        <section class="form-card">
+
+            <h2>➕ Add New Member</h2>
+
+            <form id="memberForm">
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+                        <label for="memberId">Member ID</label>
+                        <input type="text" id="memberId"
+                               placeholder="Enter Member ID" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="memberName">Member Name</label>
+                        <input type="text" id="memberName"
+                               placeholder="Enter Member Name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="department">Department</label>
+                        <input type="text" id="department"
+                               placeholder="Enter Department" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="memberEmail">Email</label>
+                        <input type="email" id="memberEmail"
+                               placeholder="Enter Email Address" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="mobile">Mobile Number</label>
+                        <input type="text" id="mobile"
+                               placeholder="Enter 10 Digit Mobile Number"
+                               maxlength="10" required>
+                    </div>
+
+                </div>
+
+                <div class="form-buttons">
+                    <button type="submit" id="submitBtn" class="add-btn">
+                        Add Member
+                    </button>
+
+                    <button type="button" class="cancel-btn"
+                            onclick="resetForm()">
+                        Cancel
+                    </button>
+                </div>
+
+            </form>
+        </section>
+
+        <!-- Search Members -->
+        <section class="search-section">
+            <h2>🔍 Search Members</h2>
+
+            <input
+                type="text"
+                id="searchMember"
+                placeholder="Search by Member ID, Name or Department..."
+            >
+        </section>
+
+        <!-- Member Table -->
+        <section class="table-section">
+
+            <h2>📋 Member List</h2>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Member ID</th>
+                            <th>Member Name</th>
+                            <th>Department</th>
+                            <th>Email</th>
+                            <th>Mobile</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="memberTable">
+                    </tbody>
+                </table>
+            </div>
+
+        </section>
+
+        <div class="back-section">
+            <a href="dashboard.html" class="back-btn">
+                ← Back to Dashboard
+            </a>
+        </div>
+
+    </main>
+
+    <script src="../Js/member.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookNest - Register</title>
+    <link rel="stylesheet" href="../CSS/common.css">
+    <script src="../Js/common.js"></script>
+</head>
+<body>
+
+    <div id="navbar"></div>
+
+    <main class="auth-main">
+        <div class="auth-box">
+            <div class="auth-icon">📖</div>
+            <h1>Create Account</h1>
+            <p class="subtitle">Join BookNest Library today</p>
+
+            <form onsubmit="registerUser(event)">
+                <div class="input-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" placeholder="Enter your full name" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" placeholder="Enter your email" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" placeholder="Enter 10 digit phone number" maxlength="10" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Create a password" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <input type="password" id="confirmPassword" placeholder="Confirm your password" required>
+                </div>
+
+                <div class="terms">
+                    <label>
+                        <input type="checkbox" id="terms" required>
+                        I agree to the Terms &amp; Conditions
+                    </label>
+                </div>
+
+                <button type="submit" class="auth-btn">Create Account</button>
+            </form>
+
+            <p class="auth-text">
+                Already have an account? <a href="login.html">Login</a>
+            </p>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2026 BookNest Library Management System</p>
+    </footer>
+
+    <script src="../Js/register.js"></script>
+</body>
+</html>

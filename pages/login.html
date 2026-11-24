@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookNest - Login</title>
+    <link rel="stylesheet" href="../CSS/common.css">
+    <script src="../Js/common.js"></script>
+</head>
+<body>
+
+    <div id="navbar"></div>
+
+    <main class="auth-main">
+        <div class="auth-box">
+            <div class="auth-icon">🔐</div>
+            <h1>Welcome Back</h1>
+            <p class="subtitle">Login to your BookNest account</p>
+
+            <form onsubmit="loginUser(event)">
+                <div class="input-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" placeholder="Enter your email" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Enter your password" required>
+                </div>
+
+                <a href="forgot.html" class="forgot-link">Forgot password?</a>
+
+                <button type="submit" class="auth-btn">Login</button>
+            </form>
+
+            <p class="auth-text">
+                Don't have an account? <a href="register.html">Create Account</a>
+            </p>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2026 BookNest Library Management System</p>
+    </footer>
+
+    <script src="../Js/login.js"></script>
+</body>
+</html>

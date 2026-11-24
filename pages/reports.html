@@ -1,0 +1,178 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>BookNest - Reports</title>
+
+    <link rel="stylesheet" href="../CSS/common.css">
+    <script src="../Js/common.js"></script>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <div id="navbar"></div>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="container">
+
+        <!-- PAGE HEADING -->
+        <section class="page-heading">
+
+            <h1>📊 Library Reports</h1>
+
+            <p>View and manage your library records easily.</p>
+
+        </section>
+
+
+        <!-- SUMMARY CARDS -->
+        <section class="summary-cards">
+
+            <div class="summary-card">
+                <h3>Total Books</h3>
+                <p id="totalBooks">0</p>
+            </div>
+
+            <div class="summary-card">
+                <h3>Total Members</h3>
+                <p id="totalMembers">0</p>
+            </div>
+
+            <div class="summary-card">
+                <h3>Issued Books</h3>
+                <p id="totalIssued">0</p>
+            </div>
+
+            <div class="summary-card">
+                <h3>Returned Books</h3>
+                <p id="totalReturned">0</p>
+            </div>
+
+            <div class="summary-card">
+                <h3>Available Books</h3>
+                <p id="availableBooks">0</p>
+            </div>
+
+        </section>
+
+
+        <!-- ISSUED BOOK REPORT -->
+        <section class="report-section">
+
+            <h2>📖 Issued Books Report</h2>
+
+            <div class="search-container">
+
+                <input
+                    type="text"
+                    id="issueSearch"
+                    placeholder="Search issued books..."
+                >
+
+            </div>
+
+            <div class="table-wrapper">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Member Name</th>
+                            <th>Book Name</th>
+                            <th>Issue Date</th>
+                            <th>Due Date</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="issuedReport">
+
+                        <tr>
+                            <td colspan="5">
+                                No issued records found.
+                            </td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <!-- RETURNED BOOK REPORT -->
+        <section class="report-section">
+
+            <h2>📚 Returned Books Report</h2>
+
+            <div class="search-container">
+
+                <input
+                    type="text"
+                    id="returnSearch"
+                    placeholder="Search returned books..."
+                >
+
+            </div>
+
+            <div class="table-wrapper">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Member Name</th>
+                            <th>Book Name</th>
+                            <th>Issue Date</th>
+                            <th>Return Date</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="returnedReport">
+
+                        <tr>
+                            <td colspan="5">
+                                No returned records found.
+                            </td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <!-- BACK BUTTON -->
+        <div class="back-section">
+
+            <a href="dashboard.html" class="back-btn">
+                ← Back to Dashboard
+            </a>
+
+        </div>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 BookNest Library Management System</p>
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="../Js/reports.js"></script>
+
+</body>
+</html>

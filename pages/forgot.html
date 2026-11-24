@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookNest - Forgot Password</title>
+    <link rel="stylesheet" href="../CSS/common.css">
+    <script src="../Js/common.js"></script>
+</head>
+<body>
+
+    <div id="navbar"></div>
+
+    <main class="auth-main">
+        <div class="auth-box">
+            <div class="auth-icon">🔑</div>
+            <h1>Forgot Password?</h1>
+            <p class="subtitle">Enter your registered email and create a new password.</p>
+
+            <form id="forgotForm">
+                <div class="input-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" placeholder="Enter your registered email" required>
+                    <small class="error-text" id="emailError"></small>
+                </div>
+
+                <div class="input-group">
+                    <label for="newPassword">New Password</label>
+                    <input type="password" id="newPassword" placeholder="Enter new password" required>
+                    <small class="error-text" id="passwordError"></small>
+                </div>
+
+                <div class="input-group">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <input type="password" id="confirmPassword" placeholder="Confirm your new password" required>
+                    <small class="error-text" id="confirmError"></small>
+                </div>
+
+                <button type="submit" class="auth-btn">Reset Password</button>
+            </form>
+
+            <p class="auth-text">
+                Remember your password? <a href="login.html">Login</a>
+            </p>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2026 BookNest Library Management System</p>
+    </footer>
+
+    <script>
+        document.getElementById("forgotForm").addEventListener("submit", function (event) {
+
+            event.preventDefault();
+
+            const email = document.getElementById("email").value.trim();
+            const newPassword = document.getElementById("newPassword").value;
+            const confirmPassword = document.getElementById("confirmPassword").value;
+
+            const emailError = document.getElementById("emailError");
+            const passwordError = document.getElementById("passwordError");
+            const confirmError = document.getElementById("confirmError");
+
+            emailError.textContent = "";
+            passwordError.textContent = "";
+            confirmError.textContent = "";
+
+            let valid = true;
+
+            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                emailError.textContent = "Please enter a valid email.";
+                valid = false;
+            }
+
+            // Min 8 chars, letter, number and symbol
+            if (!/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/.test(newPassword)) {
+                passwordError.textContent =
+                    "Password must contain 8+ characters, letter, number and symbol.";
+                valid = false;
+            }
+
+            if (newPassword !== confirmPassword) {
+                confirmError.textContent = "Passwords do not match.";
+                valid = false;
+            }
+
+            if (!valid) return;
+
+            const users = JSON.parse(localStorage.getItem("users")) || [];
+
+            const user = users.find(function (u) {
+                return u.email.toLowerCase() === email.toLowerCase();
+            });
+
+            if (!user) {
+                emailError.textContent = "This email is not registered.";
+                return;
+            }
+
+            user.password = newPassword;
+            localStorage.setItem("users", JSON.stringify(users));
+
+            alert("Password changed successfully! Please login with your new password.");
+            window.location.href = "login.html";
+
+        });
+    </script>
+</body>
+</html>

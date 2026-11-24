@@ -1,0 +1,95 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookNest - Dashboard</title>
+    <link rel="stylesheet" href="../CSS/common.css">
+    <script src="../Js/common.js"></script>
+</head>
+<body>
+
+    <div id="navbar"></div>
+
+    <main class="container">
+
+        <section class="welcome">
+            <div>
+                <h1 id="welcomeTitle">Welcome 📚</h1>
+                <p id="welcomeSub">Manage your digital library easily.</p>
+            </div>
+        </section>
+
+        <section class="stats">
+
+            <div class="stat-card">
+                <div class="stat-icon">📚</div>
+                <h3>Total Books</h3>
+                <h2 id="totalBooks">0</h2>
+                <p>Books in library</p>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">📦</div>
+                <h3>Total Quantity</h3>
+                <h2 id="totalQuantity">0</h2>
+                <p>Available book copies</p>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">👥</div>
+                <h3>Total Members</h3>
+                <h2 id="totalMembers">0</h2>
+                <p>Registered members</p>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">📖</div>
+                <h3>Issued Books</h3>
+                <h2 id="issuedBooks">0</h2>
+                <p>Currently issued</p>
+            </div>
+
+        </section>
+
+        <section class="recent-books">
+
+            <h2>Recently Added Books</h2>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Book ID</th>
+                            <th>Book Name</th>
+                            <th>Author</th>
+                            <th>Category</th>
+                            <th>Quantity</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="recentBooksBody">
+                        <tr>
+                            <td colspan="5">No books added yet.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <a href="book.html" class="view-btn">
+                Manage Books →
+            </a>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© 2026 BookNest Library Management System</p>
+    </footer>
+
+    <script src="../Js/dashboard.js"></script>
+
+</body>
+</html>

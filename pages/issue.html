@@ -1,0 +1,179 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>BookNest - Issue Book</title>
+
+    <link rel="stylesheet" href="../CSS/common.css">
+    <script src="../Js/common.js"></script>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <div id="navbar"></div>
+
+
+    <main class="container">
+
+        <!-- PAGE HEADING -->
+        <section class="page-heading">
+            <h1>📖 Issue Book Management</h1>
+            <p>Issue books to registered library members.</p>
+        </section>
+
+
+        <!-- ISSUE FORM -->
+        <section class="form-card">
+
+            <h2>Issue Details</h2>
+
+            <form id="issueForm">
+
+                <div class="form-grid">
+
+                    <!-- MEMBER -->
+                    <div class="form-group">
+
+                        <label for="memberSelect">Select Member</label>
+
+                        <select id="memberSelect" required>
+                            <option value="">Choose a member</option>
+                        </select>
+
+                        <small id="memberHelp">
+                            Select a registered member.
+                        </small>
+
+                    </div>
+
+
+                    <!-- BOOK -->
+                    <div class="form-group">
+
+                        <label for="bookSelect">Select Book</label>
+
+                        <select id="bookSelect" required>
+                            <option value="">Choose a book</option>
+                        </select>
+
+                        <small id="bookHelp">
+                            Select an available book.
+                        </small>
+
+                    </div>
+
+
+                    <!-- ISSUE DATE -->
+                    <div class="form-group">
+
+                        <label for="issueDate">Issue Date</label>
+
+                        <input type="date" id="issueDate" required>
+
+                    </div>
+
+
+                    <!-- DUE DATE -->
+                    <div class="form-group">
+
+                        <label for="returnDate">Due Date</label>
+
+                        <input type="date" id="returnDate" required>
+
+                    </div>
+
+                </div>
+
+
+                <!-- BUTTONS -->
+                <div class="form-buttons">
+
+                    <button type="submit" class="issue-btn">
+                        Issue Book
+                    </button>
+
+                    <button type="button" class="cancel-btn"
+                        onclick="resetIssueForm()">
+                        Cancel
+                    </button>
+
+                </div>
+
+            </form>
+
+        </section>
+
+
+        <!-- ISSUE RECORDS -->
+        <section class="records-card">
+
+            <div class="records-heading">
+
+                <div>
+                    <h2>Issue Records</h2>
+                    <p>View all issued books and their due dates.</p>
+                </div>
+
+                <span class="record-count" id="recordCount">
+                    0 records
+                </span>
+
+            </div>
+
+
+            <div class="table-wrapper">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Member</th>
+                            <th>Book</th>
+                            <th>Issue Date</th>
+                            <th>Due Date</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="issueTable">
+
+                        <tr>
+                            <td colspan="5" class="empty-message">
+                                No issue records found.
+                            </td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <!-- BACK BUTTON -->
+        <div class="back-section">
+
+            <a href="dashboard.html" class="back-btn">
+                ← Back to Dashboard
+            </a>
+
+        </div>
+
+    </main>
+
+
+    <footer>
+        <p>© 2026 BookNest Library Management System</p>
+    </footer>
+
+
+    <script src="../Js/issue.js"></script>
+
+</body>
+</html>

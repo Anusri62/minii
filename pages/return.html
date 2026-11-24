@@ -1,0 +1,159 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>BookNest - Return Book</title>
+
+    <link rel="stylesheet" href="../CSS/common.css">
+    <footer>
+        <p>© 2026 BookNest Library Management System</p>
+    </footer>
+
+    <script src="../Js/common.js"></script>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <div id="navbar"></div>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="container">
+
+        <!-- PAGE HEADING -->
+        <section class="page-heading">
+
+            <h1>📚 Return Book Management</h1>
+
+            <p>Manage returned books easily.</p>
+
+        </section>
+
+
+        <!-- RETURN FORM -->
+        <section class="form-card">
+
+            <h2>➕ Return Book</h2>
+
+            <form id="returnForm">
+
+                <div class="form-grid">
+
+                    <!-- SELECT ISSUED BOOK -->
+                    <div class="form-group">
+
+                        <label for="issueSelect">
+                            Select Issued Book
+                        </label>
+
+                        <select id="issueSelect" required>
+
+                            <option value="">
+                                Select Issued Book
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- RETURN DATE -->
+                    <div class="form-group">
+
+                        <label for="returnDate">
+                            Return Date
+                        </label>
+
+                        <input
+                            type="date"
+                            id="returnDate"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- BUTTONS -->
+                <div class="form-buttons">
+
+                    <button type="submit" class="return-btn">
+                        Return Book
+                    </button>
+
+                    <button
+                        type="button"
+                        class="cancel-btn"
+                        onclick="resetReturnForm()">
+
+                        Cancel
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </section>
+
+
+        <!-- RETURNED BOOK LIST -->
+        <section class="table-section">
+
+            <h2>📋 Returned Book List</h2>
+
+            <div class="table-wrapper">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+                            <th>Member Name</th>
+                            <th>Book Name</th>
+                            <th>Issue Date</th>
+                            <th>Return Date</th>
+                            <th>Status</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="returnTable">
+
+                        <tr>
+                            <td colspan="5">
+                                No books returned yet
+                            </td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <!-- BACK BUTTON -->
+        <div class="back-section">
+
+            <a href="dashboard.html" class="back-btn">
+                ← Back to Dashboard
+            </a>
+
+        </div>
+
+    </main>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="../Js/return.js"></script>
+
+</body>
+</html>
